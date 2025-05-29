@@ -1,2 +1,4 @@
 # iccb-2025
-Source code for slides presented at the International Congress for Conservation Biology 2025. Slides were made using Quarto and R.
+
+Title: Supporting scientists and decision-makers to use biodiversity data  
+Slides: [add link here once complete]
