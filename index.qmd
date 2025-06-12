@@ -212,5 +212,11 @@ The clear benefit of publishing your data in this way is to maximise its researc
 
 ## {#final data-menu-title="Final"}
 
-<br> Shandiya Balasubramaniam <br> Data Analyst, Decision Support Program Lead <br> Atlas of Living Australia <br> {{< fa envelope >}} shandiya.balasubramaniam\@csiro.au <br> {{< iconify fa6-brands:bluesky >}} shandiya.bsky.social <br> {{< fa brands github >}} shandiya <br> <br> Slides: [shandiya.quarto.pub/iccb2025](https://shandiya.quarto.pub/iccb2025/)
+::: {.column width="65%"}
+<br> **Shandiya Balasubramaniam** <br> Data Analyst, Decision Support Program Lead <br> Atlas of Living Australia <br> {{< fa envelope >}} shandiya.balasubramaniam\@csiro.au <br> {{< iconify fa6-brands:bluesky >}} shandiya.bsky.social <br> {{< fa brands github >}} shandiya 
+[![](images/logos_corp.png)]{.absolute bottom=0 left=10 width=800}
+:::
+::: {.column width="35%"}
+<br>[Slides]{.absolute right=5} <br> [[shandiya.quarto.pub/iccb2025](https://shandiya.quarto.pub/iccb2025/)]{.link-text}
+:::
 

@@ -1,0 +1,4 @@
+- source: index.qmd
+  quarto-pub:
+    - id: eb509af4-9d92-4678-acc8-e96e90e3f678
+      url: https://shandiya.quarto.pub/iccb2025
