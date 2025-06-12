@@ -1,0 +1,216 @@
+---
+pagetitle: "iccb-2025"
+format:
+  revealjs: 
+    theme: custom.scss
+    height: 1080
+    width: 1920
+    highlight-style: a11y
+    menu: false
+    code-copy: hover
+editor: visual
+---
+  
+## {#title data-menu-title="Title" background-image="images/title.png" background-gradient="radial-gradient(#2c7da0, #014f86)"}
+
+[Supporting scientists and decision-makers to use biodiversity data]{.title} [Shandiya Balasubramaniam<br>Martin Westgate]{.subtitle}
+
+![](images/logos_white.png){.absolute right=0 bottom=0}
+
+
+
+## The Global Biodiversity Information Facility is an international data infrastructure with over 3 billion occurrence records {#gbif data-menu-title="GBIF"} 
+
+![](images/gbif_network.png){width=100% fig-align=center}
+
+:::notes
+GBIF - the Global Biodiversity Information Facility - is an international network that aims to provide anyone, anywhere, with open access to biodiversity data. It currently holds over 3 billion occurrence records, and it operates through a network of participating countries, each of which has its own data-hosting institution and uses a shared set of data standards. 
+:::
+
+
+
+## The Atlas of Living Australia: Australia's national biodiversity repository  {#ala data-menu-title="ALA"}
+
+![](images/ala_records.gif){width=100% fig-align=center}  
+
+:::notes
+The Atlas of Living Australia is Australia’s node to GBIF and the largest biodiversity repository in this country, with over 150 million species occurrence records. Since 2021, the Science and Decision Support team at the ALA has been developing tools and resources to support open science practices in biodiversity research 
+:::
+
+
+
+## {#open-data-code data-menu-title="Open data & code" background-gradient="radial-gradient(#2c7da0, #014f86)"}
+
+:::: {.columns .v-center-container}
+[Open data *and* code]{.text-only}
+::::
+
+:::notes
+Open data is a critical step towards making research more transparent and reproducible, but it’s not enough to ensure best practice. Without access to the code used to process data, reproducing results remains difficult and often impossible. 
+:::
+
+
+
+## {#galah data-menu-title="{galah}"}
+
+:::: {.columns .v-center-container}
+::: {.column width="5%"}
+:::
+::: {.column width="30%"}
+![](images/logo_galah.png)
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="55%"}
+[{galah}]{.code} is an interface to biodiversity data hosted by GBIF and other living atlases, such as the Atlas of Living Australia (ALA)
+:::
+::: {.column width="5%"}
+:::
+::::
+::: footer
+[galah.ala.org.au](https://galah.ala.org.au){.footer}
+:::
+
+:::notes
+One of the tools we’ve built to address this is the galah package, which provides programmatic access to GBIF and 9 other GBIF nodes, including the ALA. 
+:::
+
+
+
+## {#galah-code data-menu-title="{galah} code"}
+
+:::: {.columns .v-center-container}
+::: {.column width="5%"}
+:::
+::: {.column width="30%"}
+![](images/logo_galah.png)
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="55%"}
+::: {.panel-tabset}
+### R
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|3|7-8|9|"
+
+library(galah)
+
+galah_config(atlas = "ALA",
+             email = "email@email.com")
+
+occ <- galah_call() |> 
+  identify("pardalotus") |> 
+  filter(year == 2025) |> 
+  atlas_occurrences(mint_doi = TRUE)
+```
+
+### Python
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|"
+
+import galah
+
+galah.galah_config(atlas = "ALA",
+                   email = "email@email.com")
+
+galah.atlas_occurrences(
+    taxa = "pardalotus",
+    filters = "year = 2025",
+    mint_doi = True
+)
+```
+:::
+:::
+::: {.column width="5%"}
+:::
+::::
+::: footer
+[galah.ala.org.au](https://galah.ala.org.au){.footer}
+:::
+
+:::notes
+This means you can choose where you’d like to download data from, specify exactly what data you’d like to download, and generate a DOI to cite the downloaded dataset. This makes it really easy to document the steps you take in downloading biodiversity data, and the DOI means anyone else who wants to, can download exactly that same dataset. 
+:::
+
+
+
+## Other projects supporting reproducibility {#labs-video data-menu-title="Labs video" auto-animate=true}
+
+![](images/labs_frog.png){.absolute top=150 width="600px"}    
+![](images/labs_video.mov){.absolute top=150 right=250 width="1100px"}
+
+:::notes
+We also maintain ALA Labs, which is a growing collection of articles on analysing, modelling, and visualising biodiversity data...
+:::
+
+
+## Other projects supporting reproducibility {#labs-book data-menu-title="Labs+book" auto-animate=true}
+
+[![](images/labs_frog.png)]{.absolute top=20 left=100}
+[[labs.ala.org.au](https://labs.ala.org.au)]{.link-text .absolute top=925 left=250}
+[![](images/book_shrimp.png)]{.absolute top=20 right=100}     
+[[cleaning-data-r.ala.org.au](https://cleaning-data-r.ala.org.au)]{.link-text .absolute top=925 right=210}  
+
+:::notes
+and the Data Cleaning in R book, which offers practical guidance on tidying different types of biodiversity data. Together, these projects aim to make it easier for researchers to document and share their workflows in a transparent and reproducible manner. 
+:::
+
+
+
+## {#open-data data-menu-title="Open data" background-gradient="radial-gradient(#2c7da0, #014f86)"}
+
+[We all love using open data...]{.left-half}  
+[...but who's sharing it?]{.right-half}
+
+:::notes
+Although open access to biodiversity data is really important for making decisions about conservation, researchers make up a comparatively small proportion of data providers to infrastructures like GBIF. Partly this reflects a historical bias towards larger institutions, but there are also other barriers like insufficient toolsets for converting and publishing data, and a lack of incentive for researchers to do this.
+:::
+
+
+
+## {#galaxias data-menu-title="{galaxias}"}
+
+:::: {.columns .v-center-container}
+::: {.column width="5%"}
+:::
+::: {.column width="30%"}
+![](images/logo_galaxias.png)
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="55%"}
+[{galaxias}]{.code} is an interface that simplifies the process of converting biodiversity data into Darwin Core Archives (DwCA), facilitating data submission to infrastructures such as the Atlas of Living Australia or the Global Biodiversity Information Facility 
+:::
+::: {.column width="5%"}
+:::
+::::
+::: footer
+[galaxias.ala.org.au](https://galaxias.ala.org.au){.footer}
+:::
+
+:::notes
+We’ve built galaxias to help with this - it lets you publish data into GBIF via national nodes like the ALA. And you do this through a scriptable process where you convert your dataset to a common standard, called Darwin Core, and then submit it to a data infrastructure. Our intention with this project was to lower the barrier to data publication so that smaller organisations, individual researchers, and consultancies can more easily engage in the data sharing process. 
+:::
+
+
+
+## {#publishing-data data-menu-title="Publishing data" background-gradient="radial-gradient(#2c7da0, #014f86)"}  
+
+:::: {.columns .v-center-container}
+[Publishing data maximises their research value, making datasets finable, persistent, and citable.]{.text-only}
+::::
+
+:::notes
+The clear benefit of publishing your data in this way is to maximise its research value. Datasets are more searchable when they’re in open databases rather than buried in the supplementary material of a paper. Published datasets also have a DOI, which makes them persistent and citable. And data infrastructures like GBIF have the stability and resources to maintain best practices for data management. 
+:::
+
+
+
+## {#final data-menu-title="Final"}
+
+<br> Shandiya Balasubramaniam <br> Data Analyst, Decision Support Program Lead <br> Atlas of Living Australia <br> {{< fa envelope >}} shandiya.balasubramaniam\@csiro.au <br> {{< iconify fa6-brands:bluesky >}} shandiya.bsky.social <br> {{< fa brands github >}} shandiya <br> <br> Slides: [shandiya.quarto.pub/iccb2025](https://shandiya.quarto.pub/iccb2025/)
+
