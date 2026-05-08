@@ -10,7 +10,7 @@ format:
     code-copy: hover
 editor: visual
 ---
-  
+
 ## {#title data-menu-title="Title" background-image="images/title.png" background-gradient="radial-gradient(#2c7da0, #014f86)"}
 
 [Supporting scientists and decision-makers to use biodiversity data]{.title} [Shandiya Balasubramaniam<br>Martin Westgate]{.subtitle}
